@@ -1,0 +1,110 @@
+<form>
+  <!---  <mk-box header="Craegiver Information" [isCollapsable]="false" [isRemovable]="false">-->
+      
+    <div class="row">
+            <div class="pull right"> 
+                <input (click)="addUser()"type="button"value="submit"class="btn btn-success">
+                <button type="cancel" class="tn btn-danger"style="margin-left: 10px" onclick="this.form.reset();">cancel</button>
+              </div>
+    </div><br>
+            <div style="color: red">
+                {{errorFirstName}} {{errorLastName}}</div>
+                <div class="row">
+            <div class="col-md-4 col-xs-12 form-group">
+              <label for="firstName"><b>First Name:</b></label>
+              <input type="text" class="form-control"  placeholder=" Enter First Name" id="firstName"  [(ngModel)]="sgobj.firstName" name="firstName"[ngModelOptions]="{standalone: true}"  required  >
+           
+          
+            
+           
+      
+        <label for="lastName"><b>Last Name:</b></label>
+        <input type="text" class="form-control"  placeholder=" Enter Last Name" id="latName" [(ngModel)]="sgobj.lastName" name="lastName"[ngModelOptions]="{standalone: true}"  required  >
+      </div>
+      </div><br>
+      <div style="color: red">
+        {{errorAddressLine1}} {{errorAddressLine2}}</div>
+  <div class="row">
+    <div class="col-md-4 col-xs-12 form-group">
+      <label for="addressLine1"><b>Address Line1:</b></label>
+      <input type="text" class="form-control"  placeholder=" Enter Address Line1" id="addressLine1"   [(ngModel)]="sgobj.addressLine1" name="addressLine1"[ngModelOptions]="{standalone: true}"  required  >
+    
+      <label for="addressLine2"><b>Address Line2:</b></label>
+      <input type="text" class="form-control"  placeholder=" Enter Address Line2" id="addressLine2"   [(ngModel)]="sgobj.addressLine2" name="addressLine2"[ngModelOptions]="{standalone: true}"  required  >
+    </div>
+        </div><br>
+        <div style="color: red">
+            {{errorEmail}}</div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12 form-group">
+          <label for="email"><b>Email:</b></label>
+          <input type="email" class="form-control"  placeholder=" Enter email" id="email"  [(ngModel)]="sgobj.email" name="email"[ngModelOptions]="{standalone: true}"  required  >
+        </div>
+        </div><br>
+        <div style="color: red">
+            {{errorPhone}}</div>
+          <div class="row">
+            <div class="col-md-4 col-xs-12 form-group">
+              <label for="cellPhone"><b>Phone:</b></label>
+              <input type="text" class="form-control"  placeholder=" Enter Cell Phone Number" id="cellPhone"   [(ngModel)]="sgobj.cellPhone" name="cellPhone"[ngModelOptions]="{standalone: true}"  required  >
+            </div>
+</div><br>
+
+ <div class="row">
+            <div class="pull right"> 
+                <input (click)="addUser()"type="button"value="submit"class="btn btn-success">
+   
+               
+               <button type="cancel" class="tn btn-danger"style="margin-left: 10px" onclick="this.form.reset();">cancel</button>
+              </div>
+    
+            </div>
+  
+      <table>
+
+        <thead>
+
+        <th>First Name</th>
+
+        <th>Last Name</th>
+
+        <th>Address Line1  </th>
+
+        <th>Address Line2</th>
+
+        <th>Email</th>
+
+        <th>Phone</th>
+
+        </thead>
+
+
+
+        <tbody>
+
+        <tr *ngFor="let User of signList">
+
+        <td>{{User.firstName}}</td>
+
+        <td>{{User.lastName}}</td>
+
+        <td>{{User.addressLine1}}</td>
+
+        <td>{{User.addressLine2}}</td>
+
+        <td>{{User.email}}</td>
+
+        <td>{{User.cellPhone}}</td>
+
+        
+
+        </tr>
+
+        </tbody>
+
+
+
+ </table>
+ 
+
+</form>
